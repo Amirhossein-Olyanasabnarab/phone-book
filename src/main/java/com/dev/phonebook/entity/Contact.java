@@ -55,6 +55,26 @@ public abstract class Contact {
         isDeleted = deleted;
     }
 
+    public Contact(String firstName, String lastName, String phone, String email, ContactType contactType) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.contactType = contactType;
+        this.isDeleted = false;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", isDeleted=" + isDeleted +
+                ", contactType=" + contactType;
+    }
+
     //region method
     private String capitalizeFirstLetter(String input){
         return input.substring(0, 1).toUpperCase() + input.substring(1);
